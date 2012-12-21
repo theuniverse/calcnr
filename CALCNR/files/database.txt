@@ -1,0 +1,26 @@
+.CONCEPT
+Literature
+Software
+
+.ROLE
+USE
+
+.INDIVIDUAL
+noah
+john
+java
+blanc
+
+.TBOX
+Literature \includeof (\le0 USE)
+Software \includeof (\ge1 USE)
+
+.ABOX
+(\notSoftware \and Literature)(noah)
+(\notSoftware \and Literature)(blanc)
+(\notLiterature \and Software)(john)
+USE(noah, java)
+(\le0 USE)(blanc)
+
+.SABOX
+(\ge0 USE)(noah)

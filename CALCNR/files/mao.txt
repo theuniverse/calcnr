@@ -1,0 +1,15 @@
+.CONCEPT
+Bird
+Flyable
+
+.INDIVIDUAL
+penguin
+
+.TBOX
+Bird \includeof Flyable
+
+.ABOX
+Bird(penguin)
+
+.SABOX
+\notFlyable(penguin)
