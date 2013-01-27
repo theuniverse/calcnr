@@ -3,6 +3,7 @@ package alcnr.cs.propagation;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Scanner;
 
 import alcnr.cs.constraint.GenericConstraint;
 import alcnr.cs.constraintsystem.ConstraintSystem;
@@ -46,7 +47,6 @@ public class CSPropagator {
 		int j = 30;
 		
 		do{
-			
 			node = queue.removeLast();
 			printNode(node);
 			ArrayList<GenericConstraint> clashes = node.cs.getClashes();

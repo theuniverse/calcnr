@@ -13,8 +13,7 @@ public class BottomConcept extends GenericConcept {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return "\\bottom";
 	}
 
 	

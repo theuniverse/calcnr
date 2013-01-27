@@ -12,7 +12,7 @@ public class ParserTest {
 		
 		ALCNRKB kb;
 		try {
-			kb = Parser.parseFile("files/mao.txt");
+			kb = Parser.parseFile("files/corp.txt");
 			ConstraintSystem cs = ALCNRtoCSConvertor.convertKB(kb);	
 			//ListIterator<GenericConstraint> constraints =  cs.getConstraints();
 			/*GenericConstraint c = null;

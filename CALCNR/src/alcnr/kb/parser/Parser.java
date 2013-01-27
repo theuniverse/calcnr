@@ -18,11 +18,13 @@ import alcnr.kb.parser.rule.GenericRule;
 import alcnr.kb.parser.rule.impl.AInstanceOfRule;
 import alcnr.kb.parser.rule.impl.ARelationRule;
 import alcnr.kb.parser.rule.impl.CAtomicRule;
+import alcnr.kb.parser.rule.impl.CBottomRule;
 import alcnr.kb.parser.rule.impl.CComplementRule;
 import alcnr.kb.parser.rule.impl.CConjunctionRule;
 import alcnr.kb.parser.rule.impl.CDisjunctionRule;
 import alcnr.kb.parser.rule.impl.CEQuantificationRule;
 import alcnr.kb.parser.rule.impl.CLNumberRestrictionRule;
+import alcnr.kb.parser.rule.impl.CTopRule;
 import alcnr.kb.parser.rule.impl.CUNumberRestrictionRule;
 import alcnr.kb.parser.rule.impl.CUQuantificationRule;
 import alcnr.kb.parser.rule.impl.IAtomicRule;
@@ -53,6 +55,8 @@ public class Parser {
 	static int state = STATE_NONE;
 	
 	static {
+		rules.add(new CBottomRule());
+		rules.add(new CTopRule());
 		rules.add(new CConjunctionRule());
 		rules.add(new CDisjunctionRule());
 		rules.add(new CComplementRule());
@@ -76,7 +80,7 @@ public class Parser {
 		
 		try {
 			InputStream fis = new FileInputStream(fileAddr);
-			fileReader  = new BufferedReader(new InputStreamReader(fis));
+			fileReader = new BufferedReader(new InputStreamReader(fis));
 		} catch (Exception e) {
 			throw e;
 		}
@@ -156,6 +160,7 @@ public class Parser {
 			}
 		}
 		
+		fileReader.close();		
 		return kb;
 		
 	}

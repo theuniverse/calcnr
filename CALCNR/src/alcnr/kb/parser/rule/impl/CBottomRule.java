@@ -8,10 +8,14 @@ import alcnr.kb.ALCNRKB;
 import alcnr.kb.parser.rule.GenericRule;
 
 public class CBottomRule extends GenericRule {
+	
+	public CBottomRule(){
+		fromPattern = "C";
+		toPattern = "\\bottom";
+	}
 
 	@Override
 	public GenericElement createElement(ALCNRKB kb) {
-		// TODO Auto-generated method stub
 		return kb.getBottomConcept();
 	}
 
